@@ -1,3 +1,113 @@
-.header{
-	
+.header {
+	width: 100vw;
+	height: 100px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: darkgrey;
+	padding: 0 50px;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__menu {
+		flex: 0 1 33.333%;
+
+		@media (max-width: 1200px) {
+			flex: 0 1 45%;
+		}
+	}
+
+	&__menu-link {
+		font-family: "Proxima Nova", sans-serif;
+		font-size: 20px;
+		line-height: 24px;
+
+		color: #ffffff;
+		margin: 0 30px 0 0;
+		transition: 0.3s;
+		&:hover {
+			color: #ffed02;
+		}
+
+		&:last-child {
+			margin: 0 0 0 0;
+		}
+
+		&.active {
+			color: #ffed02;
+			font-weight: bold;
+			position: relative;
+
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: -5px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 50px;
+				height: 3px;
+
+				background: #ffed02;
+				border-radius: 20px;
+			}
+		}
+	}
+
+	&__logo {
+		width: 75px;
+		height: 75px;
+	}
+
+	&__contacts {
+		flex: 0 1 33.333%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		@media (max-width: 1200px) {
+			flex: 0 1 45%;
+		}
+	}
+
+	&__contact-phone {
+		font-family: "Proxima Nova", sans-serif;
+		font-size: 20px;
+		line-height: 24px;
+
+		color: #ffffff;
+		margin: 0 30px 0 0;
+		transition: 0.2s;
+
+		&:hover {
+			color: #ffed02;
+		}
+	}
+
+	&__contact-item {
+		margin: 0 30px 0 0;
+
+		svg {
+			path {
+				transition: 0.2s;
+			}
+		}
+
+		&:last-child {
+			margin: 0 0 0 0;
+		}
+
+		&:hover {
+			svg {
+				path {
+					fill: #ffed02;
+				}
+			}
+		}
+	}
 }
