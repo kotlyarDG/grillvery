@@ -1,14 +1,14 @@
 // Обнуление
-@import 'reset';
+@import "reset";
 
 // Подключение шрифтов
-@import 'fonts';
+@import "fonts";
 
 // Миксины
 
-// Адаптивный шрифт 
-// Указать величину шрифта на минимальном экране и на макетном размере 
-$maxWidth: 1280; 
+// Адаптивный шрифт
+// Указать величину шрифта на минимальном экране и на макетном размере
+$maxWidth: 1280;
 @mixin adaptive-font($pcSize, $mobSize) {
 	$addSize: $pcSize - $mobSize;
 	$maxWidth: $maxWidth - 320;
@@ -16,21 +16,25 @@ $maxWidth: 1280;
 }
 
 // Общие стили
-html{
-
+html {
 }
 
-body{
-
+body {
 }
 
 // Подключение общих блоков
-@import 'blocks';
+@import "blocks";
+
+.wrapper {
+	max-width: 100vw;
+	overflow: hidden;
+}
 
 // Header
-@import 'header';
+@import "header";
+
+@import "first";
+@import "second";
 
 // Footer
-@import 'footer';
-
-
+@import "footer";

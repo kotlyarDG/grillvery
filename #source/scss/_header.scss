@@ -4,8 +4,8 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: darkgrey;
 	padding: 0 50px;
+	z-index: 50;
 
 	&__container {
 		display: flex;
@@ -23,7 +23,7 @@
 	}
 
 	&__menu-link {
-		font-family: "Proxima Nova", sans-serif;
+		font-family: "Proxima Nova";
 		font-size: 20px;
 		line-height: 24px;
 
