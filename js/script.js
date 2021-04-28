@@ -18,7 +18,8 @@ $(document).ready(function () {
 		dots: true,
 		fade: true,
 		speed: 500,
-		cssEase: 'linear'
+		cssEase: 'linear',
+		autoplay: true
 	});
 
 	$('.header__burger').click(function (event) {
@@ -38,4 +39,8 @@ $(document).ready(function () {
 	});
 
 	ibg();
+
+	AOS.init();
+
+	$('.first__bg-img').addClass('open');
 });
