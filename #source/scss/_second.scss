@@ -2,7 +2,7 @@
 	width: 100%;
 	min-height: 100vh;
 	padding: 100px 0 0 0;
-	background: url("../images/system_img/Second_section/BG_section_2-min.jpg") center / cover no-repeat;
+	background: url("../images/system_img/Second_section/BG_section_2-min.png") center / cover no-repeat;
 	position: relative;
 
 	&__wrap {
@@ -17,13 +17,33 @@
 	}
 
 	&__items {
+		padding: 0 0 50px 0;
+		.slick-dots {
+			display: flex;
+			justify-content: center;
+		}
+		.slick-dots li {
+		}
+		/* Активная точка */
+		.slick-dots li.slick-active button {
+			background: #ffed02;
+		}
+		/* Элемент точки */
+		.slick-dots li button {
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #ff9f01;
+			font-size: 0;
+			margin: 0 10px;
+		}
 	}
 
 	&__item {
 	}
 }
 .item {
-	display: flex;
+	display: flex !important;
 	justify-content: space-between;
 	&__img {
 		flex: 0 1 40%;
@@ -88,5 +108,22 @@
 		&:hover {
 			transform: translateY(-2px);
 		}
+
+		animation: pulse 2s ease 0s infinite;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		// box-shadow: 0 0 0 0 rgba(255, 237, 2, 0, 5);
+		box-shadow: 0px 0px 15px #ec9a0d;
+	}
+	70% {
+		// box-shadow: 0 0 0 10px rgba(255, 237, 2, 0, 5);
+		box-shadow: 0px 0px 30px #ec9a0d;
+	}
+	100% {
+		// box-shadow: 0 0 0 0 rgba(255, 237, 2, 0, 5);
+		box-shadow: 0px 0px 15px #ec9a0d;
 	}
 }

@@ -30,6 +30,26 @@ body {
 	overflow: hidden;
 }
 
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: #19181b;
+	border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ffed02;
+	border-radius: 15px;
+}
+
+* {
+	scrollbar-color: #ffed02 #e6e6e6;
+	scrollbar-width: thin;
+}
+
 // Header
 @import "header";
 

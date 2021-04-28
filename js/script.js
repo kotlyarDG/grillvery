@@ -13,5 +13,13 @@ $(document).ready(function () {
 		});
 	}
 
+	$('.second__items').slick({
+		arrows: false,
+		dots: true,
+		fade: true,
+		speed: 500,
+		cssEase: 'linear'
+	});
+
 	ibg();
 });

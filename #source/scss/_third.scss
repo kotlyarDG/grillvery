@@ -16,8 +16,8 @@
 }
 
 .third {
-	padding: 100px 0 70px 0;
-	background: url("../images/system_img/Second_section/BG_3-min.jpg") center / cover no-repeat;
+	padding: 100px 0 0 0;
+	background: url("../images/system_img/Second_section/BG_3-min.png");
 	position: relative;
 	&__wrap {
 		text-align: center;
@@ -63,8 +63,26 @@
 		&:hover {
 			transform: translateY(-2px);
 		}
+
+		animation: pulse 2s ease 0s infinite;
 	}
 }
+
+@keyframes pulse {
+	0% {
+		// box-shadow: 0 0 0 0 rgba(255, 237, 2, 0, 5);
+		box-shadow: 0px 0px 15px #ec9a0d;
+	}
+	70% {
+		// box-shadow: 0 0 0 10px rgba(255, 237, 2, 0, 5);
+		box-shadow: 0px 0px 20px #ec9a0d;
+	}
+	100% {
+		// box-shadow: 0 0 0 0 rgba(255, 237, 2, 0, 5);
+		box-shadow: 0px 0px 15px #ec9a0d;
+	}
+}
+
 .item-third {
 	width: 245px;
 	padding: 0 0 20px 0;
@@ -177,7 +195,7 @@
 	}
 
 	&__map {
-		margin: 50px 0;
+		margin: 50px 0 0 0;
 		width: 100%;
 	}
 
@@ -186,6 +204,11 @@
 		.third__link {
 			margin: 0 30px 0 0;
 		}
+	}
+
+	&__footer {
+		padding: 50px 0 70px 0;
+		background: url("../images/system_img/Third_section/footer-bg.png") center / cover no-repeat;
 	}
 }
 .info-third {
