@@ -26,5 +26,16 @@ $(document).ready(function () {
 		$('body').toggleClass('_lock')
 	});
 
+
+	$(window).scroll(function () {
+
+		if ($(this).scrollTop() > 0) {
+			$('.header').css('background', "rgba(0, 0, 0, 0.5)");
+		} else {
+			$('.header').css('background', "transparent");
+
+		}
+	});
+
 	ibg();
 });
