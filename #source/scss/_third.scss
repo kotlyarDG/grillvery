@@ -106,6 +106,8 @@
 	flex-direction: column;
 	&__img {
 		height: 179.7px;
+		border-top-right-radius: 25px;
+		border-top-left-radius: 25px;
 	}
 
 	&__name {
