@@ -514,16 +514,21 @@ body._lock {
 
 .second {
   width: 100%;
-  min-height: 100vh;
   padding: 100px 0 0 0;
   background: url("../images/system_img/Second_section/BG_section_2-min.png") center/cover no-repeat;
   position: relative;
 }
 
+@media (max-height: 700px) {
+  .second {
+    min-height: 100vh;
+  }
+}
+
 .second__title {
   font-family: "Woodstick", sans-serif;
-  font-size: 50px;
-  line-height: 60px;
+  font-size: 70px;
+  line-height: 150px;
   text-align: center;
   color: #ffeb02;
   padding: 0 15px;
@@ -596,6 +601,9 @@ body._lock {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .item__description {
@@ -856,6 +864,8 @@ body._lock {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-shadow: 0px 0px 15px 0px #62626280;
+          box-shadow: 0px 0px 15px 0px #62626280;
 }
 
 .item-third__img {
