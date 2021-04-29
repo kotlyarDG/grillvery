@@ -274,15 +274,6 @@ body._lock {
   body._lock {
     overflow: hidden;
   }
-  .header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
   .header__burger {
     display: block;
     position: relative;
@@ -1333,4 +1324,304 @@ body._lock {
   line-height: 24px;
   text-transform: uppercase;
   color: #ffffff !important;
+}
+
+.err-content {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 0 0 0;
+  font-family: "Woodstick", sans-serif;
+  background: url("../images/system_img/First_section/BG_section_one.jpg") center/cover no-repeat;
+}
+
+.err-content h1 {
+  font-size: 360px;
+  line-height: 432px;
+  text-align: center;
+  color: #ffed02;
+}
+
+.err-content h2 {
+  font-size: 80px;
+  line-height: 96px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (max-width: 1100px) {
+  .err-content h1 {
+    font-size: 150px;
+    line-height: 200px;
+  }
+  .err-content h2 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 470px) {
+  .err-content h1 {
+    font-size: 90px;
+    line-height: 130px;
+  }
+  .err-content h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+.basket {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 0 0 0;
+  background: url("../images/system_img/bg-basket.png") center/cover no-repeat;
+  overflow-y: auto;
+}
+
+.basket__title {
+  font-family: "Woodstick", sans-serif;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  padding: 0 15px;
+  margin: 0 0 50px 0;
+}
+
+@media (max-width: 768px) {
+  .basket__title {
+    font-size: 35px;
+    line-height: 43px;
+  }
+}
+
+.basket__items {
+  padding: 0 100px;
+}
+
+@media (max-width: 1200px) {
+  .basket__items {
+    padding: 0 20px;
+  }
+}
+
+.basket .item-third__count-wrap {
+  margin: 0 50px 0 0;
+}
+
+.basket .item-third__count-value {
+  margin: 0 18px;
+}
+
+@media (max-width: 991px) {
+  .basket .item-third__count-wrap {
+    margin: 0 0 20px 0;
+  }
+}
+
+.basket .form {
+  margin: 40px 100px 0 100px;
+  border: 7px dashed #ffffff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.basket .form .chicken-img {
+  position: absolute;
+  bottom: -85px;
+  right: -90px;
+}
+
+@media (max-width: 600px) {
+  .basket .form {
+    margin: 40px 20px 0 20px;
+  }
+  .basket .form .chicken-img {
+    right: -10px;
+    bottom: -115px;
+  }
+}
+
+.basket .input-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .basket .input-items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.basket .input-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 45px 30px 0;
+}
+
+@media (max-width: 991px) {
+  .basket .input-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 30px 0;
+  }
+}
+
+.basket .label {
+  font-family: "Woodstick", sans-serif;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+@media (max-width: 991px) {
+  .basket .label {
+    margin: 0 0 10px 0;
+  }
+}
+
+.basket .input {
+  border: 3px solid #ffe802;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  height: 44px;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: transparent;
+  text-align: center;
+  width: 220px;
+}
+
+.basket .btn {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  padding: 10px 40px;
+  background: -webkit-linear-gradient(358.19deg, #ffed02 0%, #ff9900 100%);
+  background: -o-linear-gradient(358.19deg, #ffed02 0%, #ff9900 100%);
+  background: linear-gradient(91.81deg, #ffed02 0%, #ff9900 100%);
+  -webkit-box-shadow: 0px 0px 15px #ec9a0d;
+          box-shadow: 0px 0px 15px #ec9a0d;
+  border-radius: 25px;
+  color: #000000;
+  margin: 0 0 40px 0;
+  display: inline-block;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-animation: pulse 2s ease 0s infinite;
+          animation: pulse 2s ease 0s infinite;
+}
+
+.basket .btn:hover {
+  -webkit-transform: translateY(-2px);
+      -ms-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .basket .btn {
+    font-size: 30px;
+    line-height: 38px;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 991px) {
+  .basket #name {
+    width: 217px;
+  }
+  .basket #street {
+    width: 286px;
+  }
+  .basket #house,
+  .basket #flat {
+    width: 102px;
+  }
+  .basket #time {
+    width: 170px;
+  }
+  .basket #comment {
+    width: 367px;
+  }
+}
+
+.item-basket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 20px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-basket__name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.item-basket__price {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  margin: 0 80px 0 0;
+}
+
+.item-basket:last-child {
+  margin: 0 0 0 0;
+}
+
+@media (max-width: 991px) {
+  .item-basket {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 0 50px 0;
+  }
+  .item-basket__name, .item-basket__price {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
 }

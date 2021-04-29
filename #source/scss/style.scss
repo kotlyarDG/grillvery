@@ -232,3 +232,273 @@ body._lock {
 
 	color: #ffffff !important;
 }
+
+.err-content {
+	width: 100%;
+	height: 100vh;
+	padding: 100px 0 0 0;
+	font-family: "Woodstick", sans-serif;
+	background: url("../images/system_img/First_section/BG_section_one.jpg") center / cover no-repeat;
+
+	h1 {
+		font-size: 360px;
+		line-height: 432px;
+		text-align: center;
+
+		color: #ffed02;
+	}
+
+	h2 {
+		font-size: 80px;
+		line-height: 96px;
+		text-align: center;
+
+		color: #ffffff;
+	}
+
+	@media (max-width: 1100px) {
+		h1 {
+			font-size: 150px;
+			line-height: 200px;
+		}
+
+		h2 {
+			font-size: 35px;
+			line-height: 40px;
+		}
+	}
+
+	@media (max-width: 470px) {
+		h1 {
+			font-size: 90px;
+			line-height: 130px;
+		}
+
+		h2 {
+			font-size: 25px;
+			line-height: 30px;
+		}
+	}
+}
+
+.basket {
+	width: 100%;
+	height: 100vh;
+	padding: 100px 0 0 0;
+	background: url("../images/system_img/bg-basket.png") center / cover no-repeat;
+	overflow-y: auto;
+
+	&__title {
+		font-family: "Woodstick", sans-serif;
+		font-size: 50px;
+		line-height: 60px;
+		text-align: center;
+		color: #fff;
+
+		padding: 0 15px;
+		margin: 0 0 50px 0;
+
+		@media (max-width: 768px) {
+			font-size: 35px;
+			line-height: 43px;
+		}
+	}
+
+	&__items {
+		padding: 0 100px;
+
+		@media (max-width: 1200px) {
+			padding: 0 20px;
+		}
+	}
+
+	.item-third {
+		&__count-wrap {
+			margin: 0 50px 0 0;
+		}
+
+		&__count-btn {
+		}
+
+		&__count-value {
+			margin: 0 18px;
+		}
+
+		&__add-btn {
+		}
+
+		@media (max-width: 991px) {
+			&__count-wrap {
+				margin: 0 0 20px 0;
+			}
+		}
+	}
+
+	.form {
+		margin: 40px 100px 0 100px;
+		border: 7px dashed #ffffff;
+		box-sizing: border-box;
+		border-radius: 25px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		text-align: center;
+		position: relative;
+
+		.chicken-img {
+			position: absolute;
+			bottom: -85px;
+			right: -90px;
+		}
+
+		@media (max-width: 600px) {
+			margin: 40px 20px 0 20px;
+
+			.chicken-img {
+				right: -10px;
+				bottom: -115px;
+			}
+		}
+	}
+	.input-items {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: 991px) {
+			flex-direction: column;
+		}
+	}
+	.input-wrap {
+		display: flex;
+		align-items: center;
+		margin: 0 45px 30px 0;
+
+		@media (max-width: 991px) {
+			flex-direction: column;
+			margin: 0 0 30px 0;
+		}
+	}
+	.label {
+		font-family: "Woodstick", sans-serif;
+
+		font-size: 30px;
+		line-height: 36px;
+		text-align: center;
+
+		color: #ffffff;
+		display: inline-block;
+		margin: 0 10px 0 0;
+
+		@media (max-width: 991px) {
+			margin: 0 0 10px 0;
+		}
+	}
+	.input {
+		border: 3px solid #ffe802;
+		box-sizing: border-box;
+		border-radius: 10px;
+		height: 44px;
+
+		font-family: "Proxima Nova", sans-serif;
+		font-size: 20px;
+		line-height: 24px;
+		text-transform: uppercase;
+
+		color: #ffffff;
+		background: transparent;
+		text-align: center;
+		width: 220px;
+	}
+	.btn {
+		font-family: "Proxima Nova", sans-serif;
+		font-weight: bold;
+		font-size: 40px;
+		line-height: 49px;
+		padding: 10px 40px;
+
+		background: linear-gradient(91.81deg, #ffed02 0%, #ff9900 100%);
+		box-shadow: 0px 0px 15px #ec9a0d;
+		border-radius: 25px;
+		color: #000000;
+		margin: 0 0 40px 0;
+		display: inline-block;
+		transition: 0.2s;
+		&:hover {
+			transform: translateY(-2px);
+		}
+
+		animation: pulse 2s ease 0s infinite;
+
+		@media (max-width: 768px) {
+			font-size: 30px;
+			line-height: 38px;
+			padding: 10px 20px;
+		}
+	}
+
+	@media (min-width: 991px) {
+		#name {
+			width: 217px;
+		}
+
+		#street {
+			width: 286px;
+		}
+
+		#house,
+		#flat {
+			width: 102px;
+		}
+
+		#time {
+			width: 170px;
+		}
+
+		#comment {
+			width: 367px;
+		}
+	}
+}
+
+.item-basket {
+	display: flex;
+	margin: 0 0 20px 0;
+	align-items: center;
+
+	&__name {
+		flex: 1 1 auto;
+		font-family: "Proxima Nova", sans-serif;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+
+		color: #ffffff;
+	}
+
+	&__price {
+		font-family: "Proxima Nova", sans-serif;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 24px;
+
+		color: #ffffff;
+		margin: 0 80px 0 0;
+	}
+
+	&:last-child {
+		margin: 0 0 0 0;
+	}
+
+	@media (max-width: 991px) {
+		flex-direction: column;
+		margin: 0 0 50px 0;
+
+		&__name,
+		&__price {
+			margin: 0 0 20px 0;
+			font-size: 30px;
+			line-height: 34px;
+		}
+	}
+}
