@@ -68,6 +68,15 @@
 		}
 		animation: btn-animater 2s ease-out 0s infinite;
 	}
+
+	.parallax-img {
+		position: absolute;
+	}
+
+	#l1 {
+		top: 70px;
+		left: 17%;
+	}
 }
 
 @keyframes btn-animater {

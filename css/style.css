@@ -482,6 +482,15 @@ body._lock {
           animation: none;
 }
 
+.first .parallax-img {
+  position: absolute;
+}
+
+.first #l1 {
+  top: 70px;
+  left: 17%;
+}
+
 @-webkit-keyframes btn-animater {
   0% {
     -webkit-transform: translateY(0);
