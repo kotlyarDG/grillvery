@@ -40,7 +40,11 @@ $(document).ready(function () {
 
 	ibg();
 
-	AOS.init();
+	AOS.init({
+		once: true
+
+	}
+	);
 
 	$('.first__bg-img').addClass('open');
 

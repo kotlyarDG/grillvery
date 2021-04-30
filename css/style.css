@@ -482,10 +482,6 @@ body._lock {
           animation: none;
 }
 
-.first .parallax-img {
-  position: absolute;
-}
-
 .first #l1 {
   top: 70px;
   left: 17%;
@@ -779,6 +775,10 @@ body._lock {
 
 .third__wrap {
   text-align: center;
+}
+
+.third__items {
+  position: relative;
 }
 
 .third__title {
@@ -1642,5 +1642,15 @@ body._lock {
     margin: 0 0 20px 0;
     font-size: 30px;
     line-height: 34px;
+  }
+}
+
+.parallax-img {
+  position: absolute;
+}
+
+@media (max-width: 991px) {
+  .parallax-img {
+    display: none;
   }
 }
