@@ -430,6 +430,13 @@ body._lock {
   opacity: 1;
 }
 
+@media (max-width: 768px) {
+  .first__bg-img {
+    height: auto;
+    width: 95vw;
+  }
+}
+
 .first__wrap {
   max-width: 700px;
   margin: 0 auto;
@@ -457,8 +464,9 @@ body._lock {
 
 @media (max-width: 768px) {
   .first__title {
-    font-size: 35px;
-    line-height: 43px;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 0 0;
   }
 }
 
@@ -535,6 +543,12 @@ body._lock {
   }
 }
 
+@media (max-width: 768px) {
+  .second {
+    padding: 20px 0 0 0;
+  }
+}
+
 .second__title {
   font-family: "Woodstick", sans-serif;
   font-size: 70px;
@@ -546,8 +560,8 @@ body._lock {
 
 @media (max-width: 768px) {
   .second__title {
-    font-size: 35px;
-    line-height: 43px;
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 
@@ -593,6 +607,9 @@ body._lock {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 40%;
           flex: 0 1 40%;
+  -webkit-transform: translateX(-30%);
+      -ms-transform: translateX(-30%);
+          transform: translateX(-30%);
 }
 
 .item__img img {
@@ -702,7 +719,7 @@ body._lock {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -710,15 +727,26 @@ body._lock {
             flex-direction: column;
   }
   .item__img {
-    max-width: 40%;
+    max-width: 80%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
   }
   .item__description {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     margin: 0 0 0 0;
   }
   .item__price {
     margin: 0px 0 0 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding: 13px 50px;
   }
   .item__body {
     padding: 20px 10px 0 10px;
@@ -797,8 +825,8 @@ body._lock {
 
 @media (max-width: 768px) {
   .third__title {
-    font-size: 35px;
-    line-height: 43px;
+    font-size: 30px;
+    line-height: 36px;
   }
 }
 

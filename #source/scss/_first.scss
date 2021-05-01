@@ -19,6 +19,11 @@
 		&.open {
 			opacity: 1;
 		}
+
+		@media (max-width: 768px) {
+			height: auto;
+			width: 95vw;
+		}
 	}
 
 	&__wrap {
@@ -43,8 +48,9 @@
 		padding: 0 15px;
 
 		@media (max-width: 768px) {
-			font-size: 35px;
-			line-height: 43px;
+			font-size: 30px;
+			line-height: 36px;
+			margin: 0 0 0 0;
 		}
 	}
 
