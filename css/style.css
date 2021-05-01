@@ -132,6 +132,10 @@ body._lock {
   left: 0;
   padding: 0 50px;
   z-index: 50;
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(top, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  background: -o-linear-gradient(top, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .header__container {
@@ -404,6 +408,7 @@ body._lock {
   padding: 100px 0 0 0;
   background: url("../images/system_img/First_section/BG_section_one.jpg") center/cover no-repeat;
   position: relative;
+  z-index: 2;
 }
 
 .first__bg-img {
@@ -769,7 +774,7 @@ body._lock {
 
 .third {
   padding: 100px 0 0 0;
-  background: url("../images/system_img/Second_section/BG_3-min.png") center/cover no-repeat;
+  background: url("../images/system_img/Second_section/BG_3-min.jpg") center/cover no-repeat;
   position: relative;
 }
 
@@ -1023,7 +1028,7 @@ body._lock {
 
 .third__footer {
   padding: 50px 0 70px 0;
-  background: url("../images/system_img/Third_section/footer-bg.png") center/cover no-repeat;
+  background: url("../images/system_img/Third_section/footer-bg.jpg") center/cover no-repeat;
 }
 
 .info-third {

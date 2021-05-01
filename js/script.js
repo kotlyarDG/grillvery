@@ -28,15 +28,6 @@ $(document).ready(function () {
 	});
 
 
-	$(window).scroll(function () {
-
-		if ($(this).scrollTop() > 0) {
-			$('.header').css('background', "linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%)");
-		} else {
-			$('.header').css('background', "transparent");
-
-		}
-	});
 
 	ibg();
 
