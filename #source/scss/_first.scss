@@ -6,11 +6,15 @@
 	position: relative;
 	z-index: 2;
 
+	@media (max-width: 768px) {
+		height: 100vh;
+	}
+
 	&__bg-img {
 		position: absolute;
 		z-index: 1;
-		height: 50vh;
-		top: 50%;
+		height: 60vh;
+		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -25%);
 		opacity: 0;

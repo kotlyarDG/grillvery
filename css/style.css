@@ -138,6 +138,10 @@ body._lock {
   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+.header._active {
+  background: rgba(0, 0, 0, 0.89);
+}
+
 .header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -287,7 +291,7 @@ body._lock {
   }
   .header__burger span {
     position: absolute;
-    background-color: #fff;
+    background-color: #ffed02;
     left: 0;
     width: 100%;
     height: 2px;
@@ -299,7 +303,7 @@ body._lock {
   .header__burger:before, .header__burger:after {
     content: "";
     position: absolute;
-    background-color: #fff;
+    background-color: #ffed02;
     width: 100%;
     height: 2px;
     left: 0;
@@ -411,11 +415,17 @@ body._lock {
   z-index: 2;
 }
 
+@media (max-width: 768px) {
+  .first {
+    height: 100vh;
+  }
+}
+
 .first__bg-img {
   position: absolute;
   z-index: 1;
-  height: 50vh;
-  top: 50%;
+  height: 60vh;
+  top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -25%);
       -ms-transform: translate(-50%, -25%);
@@ -1383,7 +1393,7 @@ body._lock {
   height: 100vh;
   padding: 100px 0 0 0;
   font-family: "Woodstick", sans-serif;
-  background: url("../images/system_img/First_section/BG_section_one.jpg") center/cover no-repeat;
+  background: url("../images/system_img/Third_section/footer-bg.jpg") center/cover no-repeat;
 }
 
 .err-content h1 {
@@ -1426,7 +1436,7 @@ body._lock {
   width: 100%;
   height: 100vh;
   padding: 100px 0 0 0;
-  background: url("../images/system_img/bg-basket.png") center/cover no-repeat;
+  background: url("../images/system_img/Third_section/footer-bg.jpg") center/cover no-repeat;
   overflow-y: auto;
 }
 
