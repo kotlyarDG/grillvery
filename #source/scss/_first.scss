@@ -38,6 +38,10 @@
 		flex-direction: column;
 		position: relative;
 		z-index: 2;
+
+		@media (max-width: 768px) {
+			min-height: calc(100vh - 230px);
+		}
 	}
 
 	&__title {

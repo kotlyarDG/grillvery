@@ -462,6 +462,12 @@ body._lock {
   z-index: 2;
 }
 
+@media (max-width: 768px) {
+  .first__wrap {
+    min-height: calc(100vh - 230px);
+  }
+}
+
 .first__title {
   font-family: "Woodstick", sans-serif;
   font-size: 50px;
@@ -1044,8 +1050,8 @@ body._lock {
   margin: 30px 0 0 0;
 }
 
-.third__buttons .third__link {
-  margin: 0 30px 0 0;
+.third__buttons .third__link:first-child {
+  margin: 0 70px 0 0;
 }
 
 @media (max-width: 1300px) {
@@ -1060,6 +1066,15 @@ body._lock {
     padding: 0 15px;
   }
   .third__buttons .third__link {
+    margin: 0 0 0px 0;
+  }
+  .third__buttons .third__link:first-child {
+    margin: 0 0 70px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .third__buttons .third__link:first-child {
     margin: 0 0 30px 0;
   }
 }
