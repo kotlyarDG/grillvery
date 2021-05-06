@@ -1,5 +1,12 @@
 const serverUrl = 'http://89.108.65.153:3001/api';
 
+function setCountBasketIcon(count) {
+	if ($('.basket-icon__count').text() == '0') {
+		$('.basket-icon').show();
+	}
+	$('.basket-icon__count').html(count);
+}
+
 function getCategories() {
 
 	$.ajax({
@@ -108,6 +115,7 @@ function getCategories() {
 
 					}
 					sessionStorage.setItem('products', JSON.stringify(buf));
+					setCountBasketIcon(buf.length);
 
 					console.log(JSON.parse(sessionStorage.getItem('products')))
 
@@ -234,6 +242,8 @@ function openProductPopup(product, count, categoryId) {
 			let count = +$(this).closest('.third__item').find('.item-third__count-value').text();
 
 			let buf = [];
+			let isRepeatProd = false;
+
 			if (sessionStorage.getItem('products')) {
 				buf = JSON.parse(sessionStorage.getItem('products'));
 
@@ -241,13 +251,41 @@ function openProductPopup(product, count, categoryId) {
 			if (prod['positions'].length > 1) {
 				let type = $('.popup').find('.select').data('select');
 				console.log(type);
-				buf.push({ prod, count, type });
+
+				for (let item of buf) {
+					console.log(item);
+					if (item['prod']['id'] == prod['id'] && item['type'] == type) {
+
+						item['count'] = item['count'] + count;
+						isRepeatProd = true;
+					}
+				}
+
+				if (!isRepeatProd) {
+					buf.push({ prod, count, type });
+
+				}
 
 			} else {
-				buf.push({ prod, count });
+
+				for (let item of buf) {
+					console.log(item);
+					if (item['prod']['id'] == prod['id']) {
+
+						item['count'] = item['count'] + count;
+						isRepeatProd = true;
+					}
+				}
+
+				if (!isRepeatProd) {
+					buf.push({ prod, count });
+
+				}
 
 			}
 			sessionStorage.setItem('products', JSON.stringify(buf));
+			setCountBasketIcon(buf.length);
+
 
 			console.log(JSON.parse(sessionStorage.getItem('products')))
 		}

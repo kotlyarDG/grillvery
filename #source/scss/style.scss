@@ -590,3 +590,29 @@ body._lock {
 		line-height: 45px;
 	}
 }
+
+.basket-icon {
+	display: none;
+	position: fixed;
+	right: 50px;
+	bottom: 70px;
+	z-index: 200;
+
+	&__count {
+		font-family: "Proxima Nova", sans-serif;
+		background: #2cad1c;
+		border-radius: 50%;
+		width: 27px;
+		height: 27px;
+		font-size: 16px;
+		line-height: 19px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		color: #ffffff;
+		position: absolute;
+		top: 8px;
+		left: 8px;
+	}
+}
