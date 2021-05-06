@@ -1,4 +1,6 @@
-const serverUrl = 'http://89.108.65.153:3001/api';
+
+const serverUrl = 'https://grillivery.com.ua/api';
+
 
 function setCountBasketIcon(count) {
 	if ($('.basket-icon__count').text() == '0') {
@@ -29,7 +31,7 @@ function getCategories() {
 							$('.third__items-wrap').append(
 								`
 					<div class="third__item item-third">
-					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link"></a>
+					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
 									<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__name popup__link">${item['title']}</a>
 									<div class="item-third__price-weight">
 								<span class="item-third__weight">${item['priceInfo']}</span>
@@ -47,7 +49,7 @@ function getCategories() {
 							$('.third__items-wrap').append(
 								`
 					<div class="third__item item-third">
-					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link"></a>
+					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
 									<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__name popup__link">${item['title']}</a>
 									<div class="item-third__price-weight">
 								<span class="item-third__weight">${item['priceInfo']}</span>
@@ -139,7 +141,7 @@ function openProductPopup(product, count, categoryId) {
 		console.log('go')
 		$('.popup__wrap').html(
 			`<div class="third__item item-third">
-			<div class="item-third__img" style="background: url('images/system_img/Third_section/01.png') center / cover no-repeat"></div>
+			<div class="item-third__img" style="background: url('${product['image']}') center / cover no-repeat"></div>
 			<p class="item-third__name">${product['title']}</p>
 						<p class="item-third__text">${product['positions'][0]['description']}</p>
 						<div class="item-third__count-wrap">
@@ -158,7 +160,7 @@ function openProductPopup(product, count, categoryId) {
 	} else {
 		$('.popup__wrap').html(
 			`<div class="third__item item-third">
-			<div class="item-third__img" style="background: url('images/system_img/Third_section/01.png') center / cover no-repeat"></div>
+			<div class="item-third__img" style="background: url('${product['image']}') center / cover no-repeat"></div>
 			<p class="item-third__name">${product['title']}</p>
 						<p class="item-third__text">${product['positions'][0]['description']}</p>
 						<select data-select="${product['positions'][0]['id']}" class="select" name="select">
@@ -302,10 +304,13 @@ function getContacts() {
 		success: function (data) {
 			console.log(data);
 			$('.header__contact-phone').html(`${data['CONFIG_PHONE']}`);
-			$('.header__contact-phone').attr('href', `tel:${data['CONFIG_PHONE']}`)
+			$('.header__contact-phone').attr('href', `tel:${data['CONFIG_PHONE']}`);
 			$('.header__contact-item--insta').attr('href', `${data['CONFIG_INSTA']}`);
 			$('.header__contact-item--facebook').attr('href', `${data['CONFIG_VK']}`);
 			$('.header__contact-item--telegram').attr('href', `${data['CONFIG_TG']}`);
+			$('.third__link--phone').attr('href', `tel:${data['CONFIG_PHONE']}`);
+			$('.third__link--telegram').attr('href', `${data['CONFIG_TG']}`);
+
 
 		},
 		error: function (errMsg) {

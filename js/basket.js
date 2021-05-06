@@ -1,5 +1,4 @@
-// const serverUrl = 'https://grillivery.com.ua/api';
-const serverUrl = 'http://89.108.65.153:3001/api';
+const serverUrl = 'https://grillivery.com.ua/api';
 
 
 $(document).ready(function () {
@@ -38,9 +37,9 @@ function getItems() {
 						<p class="item-basket__name">${item['prod']['title']} ${typeName}</p>
 						<p class="item-basket__price">${item['prod']['price'] * item['count']}</p>
 						<div class="item-third__count-wrap">
-							<button class="item-third__count-btn">+</button>
-							<p class="item-third__count-value">${item['count']}</p>
-							<button class="item-third__count-btn">-</button>
+							<button class="item-third__count-btn item-third__count-btn--plus">+</button>
+							<p data-price="${item['prod']['price']}" class="item-third__count-value">${item['count']}</p>
+							<button class="item-third__count-btn item-third__count-btn--minus">-</button>
 						</div>
 						<button class="item-third__add-btn delete-btn">УДАЛИТЬ</button>
 	
@@ -55,9 +54,9 @@ function getItems() {
 						<p class="item-basket__name">${item['prod']['title']}</p>
 						<p class="item-basket__price">${item['prod']['price'] * item['count']}</p>
 						<div class="item-third__count-wrap">
-							<button class="item-third__count-btn">+</button>
-							<p class="item-third__count-value">${item['count']}</p>
-							<button class="item-third__count-btn">-</button>
+							<button class="item-third__count-btn item-third__count-btn--plus">+</button>
+							<p data-price="${item['prod']['price']}" class="item-third__count-value">${item['count']}</p>
+							<button class="item-third__count-btn item-third__count-btn--minus">-</button>
 						</div>
 						<button class="item-third__add-btn delete-btn">УДАЛИТЬ</button>
 	
@@ -71,6 +70,31 @@ function getItems() {
 	$('.delete-btn').click(function () {
 		$(this).closest('.item-basket').remove();
 
+	});
+
+	$('.item-third__count-btn--plus').click(function (e) {
+		let countWrap = $(this).next();
+		let count = +$(countWrap).text() + 1;
+
+		$(countWrap).html(count);
+		let priceWrap = $(this).closest('.item-third__count-wrap').prev();
+
+		$(priceWrap).html(count * +$(countWrap).data('price'));
+
+	});
+
+	$('.item-third__count-btn--minus').click(function (e) {
+		let countWrap = $(this).prev();
+		let priceWrap = $(this).closest('.item-third__count-wrap').prev();
+
+		let count = +$(countWrap).text() - 1;
+
+		if (count > 1) {
+			$(countWrap).html(count);
+
+			$(priceWrap).html(count * +$(countWrap).data('price'));
+
+		}
 	});
 }
 
