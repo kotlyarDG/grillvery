@@ -1,59 +1,13 @@
-const serverUrl = '89.108.65.153';
+const serverUrl = 'http://89.108.65.153:3001/api';
 
 function getCategories() {
-	// let categories = [
-	// 	{
-	// 		"category": {
-	// 			"id": 1,
-	// 			"title": "Наши блюда",
-	// 			"items": [
-	// 				{
-	// 					"id": 1,
-	// 					"title": "Курица",
-	// 					"price": 120,
-	// 					"priceInfo": "320 грамм",
-	// 					"positions": [
-	// 						{
-	// 							"id": 1,
-	// 							"type": "Курица",
-	// 							"description": "Описание курицы"
-	// 						}
-	// 					]
-	// 				},
-	// 				{
-	// 					"id": 2,
-	// 					"title": "Крафтовое пиво \"Ципа\"",
-	// 					"price": 120,
-	// 					"priceInfo": "1 литр",
-	// 					"positions": [
-	// 						{
-	// 							"id": 2,
-	// 							"type": "Пиво темное",
-	// 							"description": "Описание темного пива"
-	// 						},
-	// 						{
-	// 							"id": 3,
-	// 							"type": "Пиво светлое",
-	// 							"description": "Описание светолого пива"
-	// 						}
-	// 					]
-	// 				}
-	// 			]
-	// 		}
-	// 	},
-	// 	{
-	// 		"category": {
-	// 			"id": 2,
-	// 			"title": "Соусы",
-	// 			"items": null
-	// 		}
-	// 	}
-	// ];
+
 	$.ajax({
 		type: "GET",
-		url: 'http://89.108.65.153:3001/positions',
+		url: `${serverUrl}/positions`,
 		success: function (data) {
 			let categories = data;
+			console.log(categories)
 
 
 			for (let category of categories) {
@@ -303,12 +257,77 @@ function openProductPopup(product, count, categoryId) {
 
 }
 
+function getContacts() {
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/configs`,
+		success: function (data) {
+			console.log(data);
+			$('.header__contact-phone').html(`${data['CONFIG_PHONE']}`);
+			$('.header__contact-phone').attr('href', `tel:${data['CONFIG_PHONE']}`)
+			$('.header__contact-item--insta').attr('href', `${data['CONFIG_INSTA']}`);
+			$('.header__contact-item--facebook').attr('href', `${data['CONFIG_VK']}`);
+			$('.header__contact-item--telegram').attr('href', `${data['CONFIG_TG']}`);
+
+		},
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
+}
+
+function getPromotions() {
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/promotions`,
+		success: function (data) {
+			console.log(data);
+			for (let promotion of data) {
+				$('.second__items').append(
+					`
+					<div class="second__item item">
+					<div class="item__img"><img src="data:image/png;base64,${promotion['image']}"
+								alt=""></div>
+								<div class="item__body">
+							<div class="item__description">
+								<p>${promotion['title']}</p>
+							</div>
+							<p class="item__price">${promotion['subtitle']}</p>
+							<button class="item__button">ЗАМОВИТИ</button>
+						</div>
+					</div>
+					`
+				)
+			}
+			$('.second__items').slick({
+				arrows: false,
+				dots: true,
+				fade: true,
+				speed: 500,
+				cssEase: 'linear',
+				autoplay: true
+			});
+		},
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
+}
+
 $(document).ready(function () {
 
 	sessionStorage.setItem('products', []);
 	// console.log(JSON.parse(sessionStorage.getItem('products')))
 
 	getCategories();
+
+	getContacts();
+
+	getPromotions();
 
 
 	function ibg() {
@@ -322,14 +341,7 @@ $(document).ready(function () {
 		});
 	}
 
-	$('.second__items').slick({
-		arrows: false,
-		dots: true,
-		fade: true,
-		speed: 500,
-		cssEase: 'linear',
-		autoplay: true
-	});
+
 
 	$('.header__burger').click(function (event) {
 		$('.header__burger,.burger__menu,.header').toggleClass('_active')

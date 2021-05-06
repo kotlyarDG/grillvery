@@ -1488,6 +1488,8 @@ body._lock {
 
 .basket .item-third__count-value {
   margin: 0 18px;
+  min-width: 20px;
+  text-align: center;
 }
 
 @media (max-width: 991px) {
