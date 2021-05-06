@@ -134,7 +134,7 @@ function sendOrder() {
 			success: function (msg) {
 				console.log(msg);
 
-
+				$(location).attr('href', 'https://grillivery.com.ua');
 			},
 			error: function (errMsg) {
 				console.log("Error: ", errMsg)
