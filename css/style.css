@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
   font-family: "Woodstick";
-  src: url("./../fonts/Woodstick-Regular.ttf") format("truetype");
+  src: url("./../fonts/Appleberry.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -173,6 +173,7 @@ body._lock {
   font-family: "Proxima Nova";
   font-size: 20px;
   line-height: 24px;
+  text-transform: uppercase;
   color: #ffffff;
   margin: 0 30px 0 0;
   -webkit-transition: 0.3s;
@@ -1649,7 +1650,7 @@ body._lock {
     width: 102px;
   }
   .basket #time {
-    width: 170px;
+    width: 270px;
   }
   .basket #comment {
     width: 367px;
@@ -1821,4 +1822,74 @@ body._lock {
   position: absolute;
   top: 8px;
   left: 8px;
+}
+
+@media (max-width: 768px) {
+  .basket-icon {
+    right: 10px;
+    bottom: 30px;
+  }
+}
+
+.basket__sum-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.basket__sum-content {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: 3px solid #ffe802;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.popup__wrap-basket {
+  padding: 25px 80px;
+  background: -webkit-linear-gradient(358.19deg, #ffed02 0%, #ff9900 100%);
+  background: -o-linear-gradient(358.19deg, #ffed02 0%, #ff9900 100%);
+  background: linear-gradient(91.81deg, #ffed02 0%, #ff9900 100%);
+  -webkit-box-shadow: 0px 0px 15px #ec9a0d;
+          box-shadow: 0px 0px 15px #ec9a0d;
+  border-radius: 25px;
+}
+
+.popup__wrap-basket h3 {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 40px;
+  line-height: 49px;
+  /* identical to box height */
+  text-align: center;
+  color: #000000;
+}
+
+.popup__wrap-basket p {
+  font-family: "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  color: #000000;
+}
+
+@media (max-width: 950px) {
+  .popup__wrap-basket {
+    padding: 25px 40px;
+  }
+  .popup__wrap-basket h3,
+  .popup__wrap-basket p {
+    font-size: 30px;
+    line-height: 35px;
+  }
 }

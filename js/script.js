@@ -288,7 +288,7 @@ function openProductPopup(product, count, categoryId) {
 			sessionStorage.setItem('products', JSON.stringify(buf));
 			setCountBasketIcon(buf.length);
 
-
+			closePopup();
 			console.log(JSON.parse(sessionStorage.getItem('products')))
 		}
 
@@ -368,6 +368,12 @@ function getPromotions() {
 	});
 }
 
+function closePopup() {
+	$('.popup').removeClass('open');
+	$('.popup-black').removeClass('open');
+	$('body').removeClass('_lock');
+}
+
 $(document).ready(function () {
 
 	sessionStorage.setItem('products', []);
@@ -427,16 +433,12 @@ $(document).ready(function () {
 	// });
 
 	$('.popup-black').click(function () {
-		$('.popup').removeClass('open');
-		$('.popup-black').removeClass('open');
-		$('body').removeClass('_lock');
 
+		closePopup();
 	});
 
 	$('.popup__close').click(function () {
-		$('.popup').removeClass('open');
-		$('.popup-black').removeClass('open');
-		$('body').removeClass('_lock');
+		closePopup();
 
 	})
 

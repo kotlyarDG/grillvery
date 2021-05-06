@@ -454,7 +454,7 @@ body._lock {
 		}
 
 		#time {
-			width: 170px;
+			width: 270px;
 		}
 
 		#comment {
@@ -614,5 +614,72 @@ body._lock {
 		position: absolute;
 		top: 8px;
 		left: 8px;
+	}
+
+	@media (max-width: 768px) {
+		right: 10px;
+		bottom: 30px;
+	}
+}
+
+.basket {
+	&__sum-wrap {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__sum-content {
+		font-family: "Proxima Nova", sans-serif;
+
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 24px;
+		text-transform: uppercase;
+		padding: 10px 20px;
+		color: #ffffff;
+		border: 3px solid #ffe802;
+		box-sizing: border-box;
+		border-radius: 10px;
+	}
+}
+
+.popup__wrap-basket {
+	padding: 25px 80px;
+
+	background: linear-gradient(91.81deg, #ffed02 0%, #ff9900 100%);
+	box-shadow: 0px 0px 15px #ec9a0d;
+	border-radius: 25px;
+
+	h3 {
+		font-family: "Proxima Nova", sans-serif;
+
+		font-size: 40px;
+		line-height: 49px;
+		/* identical to box height */
+
+		text-align: center;
+
+		color: #000000;
+	}
+
+	p {
+		font-family: "Proxima Nova", sans-serif;
+
+		font-style: normal;
+		font-weight: bold;
+		font-size: 40px;
+		line-height: 49px;
+		text-align: center;
+
+		color: #000000;
+	}
+
+	@media (max-width: 950px) {
+		padding: 25px 40px;
+		h3,
+		p {
+			font-size: 30px;
+			line-height: 35px;
+		}
 	}
 }

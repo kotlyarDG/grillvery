@@ -3,7 +3,7 @@ const serverUrl = 'https://grillivery.com.ua/api';
 
 $(document).ready(function () {
 	$('.header__burger').click(function (event) {
-		$('.header__burger,.burger__menu').toggleClass('_active')
+		$('.header__burger,.burger__menu,.header').toggleClass('_active')
 		$('body').toggleClass('_lock');
 	});
 
@@ -11,12 +11,38 @@ $(document).ready(function () {
 
 	getItems();
 
+	getContacts();
+
+	getSum();
+
 
 	$('.form').submit(function (e) {
 		sendOrder();
 		e.preventDefault();
 	});
 });
+
+function getSum() {
+	let items = $('.item-basket__price');
+	let sum = 0;
+	if (items.length > 0) {
+		for (let item of items) {
+			sum = sum + +$(item).text();
+		}
+		console.log(sum)
+		$('.basket__sum-wrap').html(
+			`
+			<div class="basket__sum-content">
+					Cума: ${sum} грн.
+				</div>
+			`
+		)
+	} else {
+		$(location).attr('href', 'https://grillivery.com.ua');
+
+		$('.basket__sum-content').remove();
+	}
+}
 
 function getItems() {
 	let items = JSON.parse(sessionStorage.getItem('products'));
@@ -41,7 +67,7 @@ function getItems() {
 							<p data-price="${item['prod']['price']}" class="item-third__count-value">${item['count']}</p>
 							<button class="item-third__count-btn item-third__count-btn--minus">-</button>
 						</div>
-						<button class="item-third__add-btn delete-btn">УДАЛИТЬ</button>
+						<button class="item-third__add-btn delete-btn">ВИЛУЧИТИ</button>
 	
 					</div>
 				`
@@ -58,7 +84,7 @@ function getItems() {
 							<p data-price="${item['prod']['price']}" class="item-third__count-value">${item['count']}</p>
 							<button class="item-third__count-btn item-third__count-btn--minus">-</button>
 						</div>
-						<button class="item-third__add-btn delete-btn">УДАЛИТЬ</button>
+						<button class="item-third__add-btn delete-btn">ВИЛУЧИТИ</button>
 	
 					</div>
 				`
@@ -69,6 +95,8 @@ function getItems() {
 
 	$('.delete-btn').click(function () {
 		$(this).closest('.item-basket').remove();
+		getSum();
+
 
 	});
 
@@ -80,19 +108,21 @@ function getItems() {
 		let priceWrap = $(this).closest('.item-third__count-wrap').prev();
 
 		$(priceWrap).html(count * +$(countWrap).data('price'));
-
+		getSum();
 	});
 
 	$('.item-third__count-btn--minus').click(function (e) {
 		let countWrap = $(this).prev();
 		let priceWrap = $(this).closest('.item-third__count-wrap').prev();
 
-		let count = +$(countWrap).text() - 1;
+		let count = +$(countWrap).text();
 
 		if (count > 1) {
+			count = count - 1;
 			$(countWrap).html(count);
 
 			$(priceWrap).html(count * +$(countWrap).data('price'));
+			getSum();
 
 		}
 	});
@@ -133,16 +163,47 @@ function sendOrder() {
 			data: dataToSend,
 			success: function (msg) {
 				console.log(msg);
+				$('.popup').addClass('open');
+				$('.popup-black').addClass('open');
+				$('body').addClass('_lock');
 
-				$(location).attr('href', 'https://grillivery.com.ua');
+				setTimeout(function () {
+					$(location).attr('href', 'https://grillivery.com.ua');
+
+				}, 1200);
 			},
 			error: function (errMsg) {
 				console.log("Error: ", errMsg)
 			}
 		});
+
+
 	} else {
 		console.log('not items')
 	}
 
 
+}
+
+function getContacts() {
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/configs`,
+		success: function (data) {
+			console.log(data);
+			$('.header__contact-phone').html(`${data['CONFIG_PHONE']}`);
+			$('.header__contact-phone').attr('href', `tel:${data['CONFIG_PHONE']}`);
+			$('.header__contact-item--insta').attr('href', `${data['CONFIG_INSTA']}`);
+			$('.header__contact-item--facebook').attr('href', `${data['CONFIG_VK']}`);
+			$('.header__contact-item--telegram').attr('href', `${data['CONFIG_TG']}`);
+
+
+
+		},
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
 }

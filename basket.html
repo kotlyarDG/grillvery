@@ -14,6 +14,7 @@
 	<!-- Подключение CSS файлов -->
 
 	<link rel="stylesheet" href="css/style.css" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -26,8 +27,8 @@
 				<p class="header__burger"><span></span></p>
 
 				<nav class="header__menu">
-					<a href="" class="header__menu-link active">ДОСТАВКА</a>
-					<a href="" class="header__menu-link">КОНТАКТИ</a>
+					<a href="index.html" class="header__menu-link active">головна</a>
+					<a href="delivery.html" class="header__menu-link">умови доставки</a>
 				</nav>
 				<a href="index.html"><img src="images/system_img/Gril_logo.svg" alt="logo" class="header__logo"></a>
 				<div class="header__contacts">
@@ -61,8 +62,8 @@
 			</div>
 		</header>
 		<div class="burger__menu">
-			<a href="" class="header__menu-link active">ДОСТАВКА</a>
-			<a href="" class="header__menu-link">КОНТАКТИ</a>
+			<a href="index.html" class="header__menu-link active">головна</a>
+			<a href="delivery.html" class="header__menu-link">умови доставки</a>
 
 			<div class="header__contacts">
 				<a href="" class="header__contact-item">
@@ -97,23 +98,26 @@
 		</div>
 
 		<div class="basket">
-			<h1 class="basket__title">Ваш заказ</h1>
+			<h1 class="basket__title">ВАШЕ ЗАМОВЛЕННЯ</h1>
 			<div class="basket__items">
+
+			</div>
+			<div class="basket__sum-wrap">
 
 			</div>
 			<form class="form">
 				<img class="chicken-img" src="images/system_img/chicken.png" alt="">
 				<div class="input-items">
 					<div class="input-wrap">
-						<label for="name" class="label">ИМЯ</label>
+						<label for="name" class="label">ІМ’Я</label>
 						<input type="text" id="name" class="input" required>
 					</div>
 					<div class="input-wrap">
-						<label for="street" class="label">уЛИЦА</label>
+						<label for="street" class="label">ВУЛИЦЯ</label>
 						<input type="text" id="street" class="input" required>
 					</div>
 					<div class="input-wrap">
-						<label for="house" class="label">ДОМ</label>
+						<label for="house" class="label">БУД</label>
 						<input type="text" id="house" class="input" required>
 					</div>
 					<div class="input-wrap">
@@ -121,17 +125,29 @@
 						<input type="text" id="flat" class="input">
 					</div>
 					<div class="input-wrap">
-						<label for="time" class="label">ВРЕМЯ ДОСТАВКИ</label>
-						<input type="time" id="time" class="input" required>
+						<label for="time" class="label">ЧАС ДОСТАВКИ</label>
+						<input type="text" id="time" class="input" required value="Найближчим часом">
 					</div>
 					<div class="input-wrap">
-						<label for="comment" class="label">КОММЕНТАРИЙ</label>
-						<input type="text" id="comment" class="input" required>
+						<label for="comment" class="label">КОММЕНТАР</label>
+						<input type="text" id="comment" class="input" required value="Ваша курка найсмачніша!">
 					</div>
 				</div>
 
-				<button class="btn" type="submit">ЗАКАЗАТЬ</button>
+				<button class="btn" type="submit">ЗАМОВИТИ</button>
 			</form>
+		</div>
+
+		<div class="popup-black"></div>
+
+		<div class="popup" id="popup-first">
+			<div class="popup__content">
+				<div class="popup__wrap popup__wrap-basket">
+					<h3>МИ ОТРИМАЛИ ВАШЕ ЗАМОВЛЕННЯ</h3>
+					<p>БАЖАЄМО ВАМ СМАЧНОГО!</p>
+				</div>
+
+			</div>
 		</div>
 	</div>
 
