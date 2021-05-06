@@ -288,14 +288,14 @@ function getPromotions() {
 				$('.second__items').append(
 					`
 					<div class="second__item item">
-					<div class="item__img"><img src="data:image/png;base64,${promotion['image']}"
+					<div class="item__img"><img src="${promotion['image']}"
 								alt=""></div>
 								<div class="item__body">
 							<div class="item__description">
 								<p>${promotion['title']}</p>
 							</div>
 							<p class="item__price">${promotion['subtitle']}</p>
-							<button class="item__button">ЗАМОВИТИ</button>
+							<button data-link="#third" class="item__button link-btn">ЗАМОВИТИ</button>
 						</div>
 					</div>
 					`
@@ -309,6 +309,13 @@ function getPromotions() {
 				cssEase: 'linear',
 				autoplay: true
 			});
+
+			$('.link-btn').click(function () {
+				var linkID = $(this).data('link');
+				$('html, body').animate({
+					scrollTop: $(linkID).offset().top
+				}, 'slow');
+			})
 		},
 		error: function (errMsg) {
 			console.log("Error: ", errMsg)
@@ -328,12 +335,12 @@ $(document).ready(function () {
 
 	getPromotions();
 
-	$('.first__button').click(function () {
-		var linkID = $(this).data('link');
-		$('html, body').animate({
-			scrollTop: $(linkID).offset().top
-		}, 'slow');
-	})
+	// $('.first-button').click(function () {
+	// 	var linkID = $(this).data('link');
+	// 	$('html, body').animate({
+	// 		scrollTop: $(linkID).offset().top
+	// 	}, 'slow');
+	// })
 
 
 	function ibg() {
