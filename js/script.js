@@ -321,13 +321,19 @@ function getPromotions() {
 $(document).ready(function () {
 
 	sessionStorage.setItem('products', []);
-	// console.log(JSON.parse(sessionStorage.getItem('products')))
 
 	getCategories();
 
 	getContacts();
 
 	getPromotions();
+
+	$('.first__button').click(function () {
+		var linkID = $(this).data('link');
+		$('html, body').animate({
+			scrollTop: $(linkID).offset().top
+		}, 'slow');
+	})
 
 
 	function ibg() {
