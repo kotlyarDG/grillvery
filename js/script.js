@@ -42,7 +42,7 @@ function getCategories() {
 								<p class="item-third__count-value">${1}</p>
 								<button class="item-third__count-btn item-third__count-btn--minus">-</button>
 							</div>
-							<button data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn">ДОБАВИТЬ</button>
+							<button data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn">ДОДАТИ</button>
 					`
 							)
 						} else {
@@ -55,7 +55,7 @@ function getCategories() {
 								<span class="item-third__weight">${item['priceInfo']}</span>
 								<span class="item-third__price">${item['price']} грн</span>
 							</div>
-							<button href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn popup__link">ПОДРОБНЕЕ</button>
+							<button href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn popup__link">детальніше</button>
 					`
 							)
 						}
@@ -153,7 +153,7 @@ function openProductPopup(product, count, categoryId) {
 						<span class="item-third__weight">${product['priceInfo']}</span>
 						<span class="item-third__price">${product['price']} грн</span>
 					</div>
-					<button data-category="${categoryId}" data-product="${product['id']}" class="item-third__add-btn">ДОБАВИТЬ</button>
+					<button data-category="${categoryId}" data-product="${product['id']}" class="item-third__add-btn">ДОДАТИ</button>
 					</div>
 			`
 		);
@@ -175,7 +175,7 @@ function openProductPopup(product, count, categoryId) {
 						<span class="item-third__weight">${product['priceInfo']}</span>
 						<span class="item-third__price">${product['price']} грн</span>
 					</div>
-					<button data-category="${categoryId}" data-product="${product['id']}" class="item-third__add-btn">ДОБАВИТЬ</button>
+					<button data-category="${categoryId}" data-product="${product['id']}" class="item-third__add-btn">ДОДАТИ</button>
 					</div>
 			`
 		);

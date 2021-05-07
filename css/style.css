@@ -1025,6 +1025,7 @@ body._lock {
   width: 169px;
   height: 44px;
   background: none;
+  text-transform: uppercase;
   border: 3px solid #ffe802;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1739,6 +1740,7 @@ body._lock {
   font-size: 70px;
   line-height: 84px;
   /* identical to box height */
+  text-transform: uppercase;
   text-align: center;
   color: #ffed02;
   margin: 0 0 50px 0;
@@ -1756,6 +1758,7 @@ body._lock {
 
 .delivery__ps {
   font-family: "Woodstick", sans-serif;
+  text-transform: uppercase;
   font-size: 30px;
   line-height: 36px;
   text-align: center;
