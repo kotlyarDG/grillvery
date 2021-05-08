@@ -16,19 +16,21 @@ function getCategories() {
 		url: `${serverUrl}/positions`,
 		success: function (data) {
 			let categories = data;
-			console.log(categories)
 
 
 			for (let category of categories) {
 
+
+
 				if (category['category']['items'] !== null) {
 					$('.third__items').append(
 						`<h3 class="third__title">${category['category']['title']}</h3>
-				<div class="third__items-wrap"></div>`
+						<div id="cat${category['category']['id']}" class="third__items-wrap"></div>`
 					);
 					for (let item of category['category']['items']) {
+
 						if (item['positions'].length == 1) {
-							$('.third__items-wrap').append(
+							$(`#cat${category['category']['id']}`).append(
 								`
 					<div class="third__item item-third">
 					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
@@ -46,7 +48,7 @@ function getCategories() {
 					`
 							)
 						} else {
-							$('.third__items-wrap').append(
+							$(`#cat${category['category']['id']}`).append(
 								`
 					<div class="third__item item-third">
 					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
@@ -135,10 +137,9 @@ function getCategories() {
 }
 
 function openProductPopup(product, count, categoryId) {
-	console.log(product);
-	console.log(count);
+
 	if (product['positions'].length == 1) {
-		console.log('go')
+
 		$('.popup__wrap').html(
 			`<div class="third__item item-third">
 			<div class="item-third__img" style="background: url('${product['image']}') center / cover no-repeat"></div>
@@ -184,8 +185,7 @@ function openProductPopup(product, count, categoryId) {
 		});
 
 		$('.select').on("select2:select", function (e) {
-			console.log(e);
-			console.log(e.params.data);
+
 			$('.popup__wrap').find('.item-third__text').html(
 				`
 				${product['positions'].find(el => el.id == e.params.data.id)['description']}
@@ -222,13 +222,13 @@ function openProductPopup(product, count, categoryId) {
 
 	$('.popup').find('.item-third__count-btn--plus').click(function (e) {
 		let count = +$(this).next().text();
-		console.log(count);
+
 		$(this).next().html(count + 1);
 	});
 
 	$('.popup').find('.item-third__count-btn--minus').click(function (e) {
 		let count = +$(this).prev().text();
-		console.log(count);
+
 		if (count > 1) {
 			$(this).prev().html(count - 1);
 
@@ -252,10 +252,9 @@ function openProductPopup(product, count, categoryId) {
 			}
 			if (prod['positions'].length > 1) {
 				let type = $('.popup').find('.select').data('select');
-				console.log(type);
+
 
 				for (let item of buf) {
-					console.log(item);
 					if (item['prod']['id'] == prod['id'] && item['type'] == type) {
 
 						item['count'] = item['count'] + count;
@@ -271,7 +270,6 @@ function openProductPopup(product, count, categoryId) {
 			} else {
 
 				for (let item of buf) {
-					console.log(item);
 					if (item['prod']['id'] == prod['id']) {
 
 						item['count'] = item['count'] + count;
@@ -289,7 +287,6 @@ function openProductPopup(product, count, categoryId) {
 			setCountBasketIcon(buf.length);
 
 			closePopup();
-			console.log(JSON.parse(sessionStorage.getItem('products')))
 		}
 
 	})
@@ -302,7 +299,6 @@ function getContacts() {
 		type: "GET",
 		url: `${serverUrl}/configs`,
 		success: function (data) {
-			console.log(data);
 			$('.header__contact-phone').html(`${data['CONFIG_PHONE']}`);
 			$('.header__contact-phone').attr('href', `tel:${data['CONFIG_PHONE']}`);
 			$('.header__contact-item--insta').attr('href', `${data['CONFIG_INSTA']}`);
@@ -326,7 +322,6 @@ function getPromotions() {
 		type: "GET",
 		url: `${serverUrl}/promotions`,
 		success: function (data) {
-			console.log(data);
 			for (let promotion of data) {
 				$('.second__items').append(
 					`

@@ -100,6 +100,8 @@
 .item-third {
 	width: 245px;
 	padding: 0 0 20px 0;
+	position: relative;
+	z-index: 10;
 
 	background: #19181b;
 	border-radius: 25px;
