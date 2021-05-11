@@ -133,6 +133,7 @@ function sendOrder() {
 	let address = $('#street').val() + ' ' + $('#house').val() + ' ' + $('#flat').val();
 	let time = $('#time').val();
 	let comment = $('#comment').val();
+	let phone = $('#phone').val();
 
 	let positions = [];
 
@@ -152,7 +153,8 @@ function sendOrder() {
 			'address': address,
 			'time': time,
 			'comment': comment,
-			'positions': positions
+			'positions': positions,
+			'phone': phone
 		}
 
 		console.log(dataToSend);
