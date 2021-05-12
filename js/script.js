@@ -16,12 +16,8 @@ function getCategories() {
 		url: `${serverUrl}/positions`,
 		success: function (data) {
 			let categories = data;
-			console.log(categories);
-
 
 			for (let category of categories) {
-
-
 
 				if (category['category']['items'] !== null) {
 					$('.third__items').append(
@@ -29,7 +25,6 @@ function getCategories() {
 						<div id="cat${category['category']['id']}" class="third__items-wrap"></div>`
 					);
 					for (let item of category['category']['items']) {
-						console.log(item);
 						if (item['positions']) {
 							if (item['positions'].length == 1) {
 								$(`#cat${category['category']['id']}`).append(
@@ -111,7 +106,6 @@ function getCategories() {
 					}
 
 					for (let item of buf) {
-						console.log(item);
 						if (item['prod']['id'] == prod['id']) {
 
 							item['count'] = item['count'] + count;
