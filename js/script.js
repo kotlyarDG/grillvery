@@ -16,6 +16,7 @@ function getCategories() {
 		url: `${serverUrl}/positions`,
 		success: function (data) {
 			let categories = data;
+			console.log(categories);
 
 
 			for (let category of categories) {
@@ -28,39 +29,42 @@ function getCategories() {
 						<div id="cat${category['category']['id']}" class="third__items-wrap"></div>`
 					);
 					for (let item of category['category']['items']) {
-
-						if (item['positions'].length == 1) {
-							$(`#cat${category['category']['id']}`).append(
-								`
-					<div class="third__item item-third">
-					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
-									<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__name popup__link">${item['title']}</a>
-									<div class="item-third__price-weight">
-								<span class="item-third__weight">${item['priceInfo']}</span>
-								<span class="item-third__price">${item['price']} грн</span>
-							</div>
-							<div class="item-third__count-wrap">
-								<button class="item-third__count-btn item-third__count-btn--plus">+</button>
-								<p class="item-third__count-value">${1}</p>
-								<button class="item-third__count-btn item-third__count-btn--minus">-</button>
-							</div>
-							<button data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn">ДОДАТИ</button>
-					`
-							)
-						} else {
-							$(`#cat${category['category']['id']}`).append(
-								`
-					<div class="third__item item-third">
-					<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
-									<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__name popup__link">${item['title']}</a>
-									<div class="item-third__price-weight">
-								<span class="item-third__weight">${item['priceInfo']}</span>
-								<span class="item-third__price">${item['price']} грн</span>
-							</div>
-							<button href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn popup__link">детальніше</button>
-					`
-							)
+						console.log(item);
+						if (item['positions']) {
+							if (item['positions'].length == 1) {
+								$(`#cat${category['category']['id']}`).append(
+									`
+						<div class="third__item item-third">
+						<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
+										<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__name popup__link">${item['title']}</a>
+										<div class="item-third__price-weight">
+									<span class="item-third__weight">${item['priceInfo']}</span>
+									<span class="item-third__price">${item['price']} грн</span>
+								</div>
+								<div class="item-third__count-wrap">
+									<button class="item-third__count-btn item-third__count-btn--plus">+</button>
+									<p class="item-third__count-value">${1}</p>
+									<button class="item-third__count-btn item-third__count-btn--minus">-</button>
+								</div>
+								<button data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn">ДОДАТИ</button>
+						`
+								)
+							} else {
+								$(`#cat${category['category']['id']}`).append(
+									`
+						<div class="third__item item-third">
+						<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__img popup__link" style="background: url('${item['image']}') center / cover no-repeat"></a>
+										<a href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__name popup__link">${item['title']}</a>
+										<div class="item-third__price-weight">
+									<span class="item-third__weight">${item['priceInfo']}</span>
+									<span class="item-third__price">${item['price']} грн</span>
+								</div>
+								<button href="popup-first" data-category="${category['category']['id']}" data-product="${item['id']}" class="item-third__add-btn popup__link">детальніше</button>
+						`
+								)
+							}
 						}
+
 
 					}
 				}
