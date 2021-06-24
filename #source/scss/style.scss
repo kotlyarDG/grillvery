@@ -537,6 +537,17 @@ body._lock {
 		margin: 0 0 50px 0;
 	}
 
+	&__subtitle {
+		font-family: "Woodstick", sans-serif;
+		margin-bottom: 35px;
+		font-size: 30px;
+		line-height: 30px;
+		text-align: center;
+		text-transform: uppercase;
+
+		color: #ffed02;
+	}
+
 	&__text {
 		font-family: "Proxima Nova", sans-serif;
 		font-size: 20px;
